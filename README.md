@@ -29,3 +29,7 @@ Now we can Use Mutation Observer To Imperativ handle the Page and ServiceWorkers
 Custom Elements is where you put some <custom-element> into the code and it gets directly rendered like you defined it before to do so you registered handlers in the browser so he knowed what to do as you inserted the Element. 
 Mutation Observer is the raw api that allows us to do that it runs after the Script Loops but before the Paint Loops where Animation Frame Runs after the Paint Loop to prepare the next Paint Loop. So a Infinity loop in Animation or Mutation Observer blocks page rendering as a infinity loop in the main script loop would do. 
 
+in the dark ages before that eg jQuery we did simple execute code in the main script loop that constant checks if something changed and we manipulated internals to get events about changes. all this is not nessesary any more today it got all Replaced by Mutation Observer Loop and API. No Matter what framework does what ever change to the dom no matter with what api Mutation Observer gets that change before it is painted on page so that is the place where you can escape dependency hell and do incremental refactoring when you got a highly encapsulated app you can here modularise it again.
+
+
+
