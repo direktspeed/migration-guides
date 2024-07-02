@@ -21,7 +21,7 @@ I have spent considerable time understanding why people argue as they do and how
 
 
 ### Browser Rendering Pipeline
-Inital Parse Start => Head apply Head => Paint Head => Start Body parsing (here it can get wild when some Content Types come into consideration XHTML XML and so on we only care for html now)  => => Secund Iteration of the JS Stack first iteration of the Module Stack! => first chunk Mutation apply => first paint event aka DOMCOntent Loaded can race with Module Stack if it does not use top level await to block. 
+Inital Parse Start => Head apply Head => Paint Head => Start Body parsing (here it can get wild when some Content Types come into consideration XHTML XML and so on we only care for html now)  => => Secund Iteration of the JS Stack first iteration of the Module Stack! => first chunk Mutation apply => first paint event aka DOMCOntent Loaded can race with Module Stack if it does not use top level await to block. By design first Module Stack Iteration end is equal to content first paint so a Module can assume Dom Content Loaded already and even painted.
 
 Now we can Use Mutation Observer To Imperativ handle the Page and ServiceWorkers could even modify the Inital Load from now on for this Document that is also importent service-worker get registered for a scope but they get used by a HTML Document they get not used by other urls that you direct hit outside the scope the html document that does load them. the scope only defines the subset of the page requests that this service worker should handle so it is also consider able to have diffrent workers per page! not by path. 
 
