@@ -25,3 +25,7 @@ Inital Parse Start => Head apply Head => Paint Head => Start Body parsing (here 
 
 Now we can Use Mutation Observer To Imperativ handle the Page and ServiceWorkers could even modify the Inital Load from now on for this Document that is also importent service-worker get registered for a scope but they get used by a HTML Document they get not used by other urls that you direct hit outside the scope the html document that does load them. the scope only defines the subset of the page requests that this service worker should handle so it is also consider able to have diffrent workers per page! not by path. 
 
+### How CustomElement API Got Integrated and Pollyfilled
+Custom Elements is where you put some <custom-element> into the code and it gets directly rendered like you defined it before to do so you registered handlers in the browser so he knowed what to do as you inserted the Element. 
+Mutation Observer is the raw api that allows us to do that it runs after the Script Loops but before the Paint Loops where Animation Frame Runs after the Paint Loop to prepare the next Paint Loop. So a Infinity loop in Animation or Mutation Observer blocks page rendering as a infinity loop in the main script loop would do. 
+
